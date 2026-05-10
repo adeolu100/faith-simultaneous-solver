@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <h3 class="flash">{{ msg }}</h3>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<h1>Simultaneous Equation Solver</h1>
+<button><a href="/">HOME</a></button>
+<button><a href="/2">2x2</a></button>
+<div class="eqn">
+    <h2>3x3 EQUATION</h2>
+    <form method="POST">
+
+        <input type="number" name="x1" placeholder="x1" value="{{x1}}" required>x +
+        <input type="number" name="y1" placeholder="y1" value="{{y1}}" required>y +
+        <input type="number" name="z1" placeholder="z1" value="{{z1}}" required>z =
+        <input type="number" name="t1" placeholder="t1" value="{{t1}}" required><br><br>
+
+        <input type="number" name="x2" placeholder="x2" value="{{x2}}" required>x +
+        <input type="number" name="y2" placeholder="y2" value="{{y2}}" required>y +
+        <input type="number" name="z2" placeholder="z2" value="{{z2}}" required>z =
+        <input type="number" name="t2" placeholder="t2"><br><br>
+
+        <input type="number" name="x3" placeholder="x3" value="{{x3}}" required>x +
+        <input type="number" name="y3" placeholder="y3" value="{{y3}}" required>y +
+        <input type="number" name="z3" placeholder="z3" value="{{z3}}" required>z =
+        <input type="number" name="t3" placeholder="t3"><br><br>
+
+        <button type="submit">Solve</button>
+    </form>
+    <h2>{{ result }}</h2>
+</div>
+{% endblock %}
