@@ -49,4 +49,4 @@ def three_by_3():
             return redirect(url_for('three_by_3'))
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run()
