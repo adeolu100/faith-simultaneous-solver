@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
 import mycode
+import os
 
 app = Flask(__name__)
 app.secret_key="faith123"
@@ -49,4 +50,4 @@ def three_by_3():
             return redirect(url_for('three_by_3'))
 
 if __name__=="__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
